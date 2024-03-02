@@ -12,6 +12,7 @@ use super::ClauseRef;
 ///
 /// The individual clause activities are stored in the clause allocator. This stores global metadata
 /// used for bumping and decaying activities.
+#[derive(Clone)]
 pub struct ClauseActivity {
     /// The value to add on bumping.
     bump: f32,

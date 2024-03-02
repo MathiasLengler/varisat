@@ -9,6 +9,7 @@ use varisat_internal_proof::{lit_code_hash, lit_hash, ClauseHash};
 
 use crate::context::{parts::*, Context};
 
+#[derive(Clone)]
 pub struct ClauseHasher {
     /// How many bits are used for storing clause hashes.
     pub hash_bits: u32,

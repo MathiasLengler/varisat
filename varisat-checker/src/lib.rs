@@ -75,7 +75,7 @@ impl CheckerError {
 }
 
 /// A checker for unsatisfiability proofs in the native varisat format.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Checker<'a> {
     ctx: Box<Context<'a>>,
 }

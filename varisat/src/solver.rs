@@ -49,7 +49,7 @@ impl SolverError {
 }
 
 /// A boolean satisfiability solver.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Solver<'a> {
     ctx: Box<Context<'a>>,
 }

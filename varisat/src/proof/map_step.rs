@@ -5,7 +5,7 @@ use varisat_formula::{Lit, Var};
 use super::{ClauseHash, ProofStep};
 
 /// Maps literals and hashes of clause steps between the solver and the checker.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct MapStep {
     lit_buf: Vec<Lit>,
     hash_buf: Vec<ClauseHash>,

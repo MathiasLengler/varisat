@@ -25,6 +25,7 @@ use crate::config::SolverConfig;
 /// the bump value are scaled down. Apart from a scaling factor that is the same for all involved
 /// values, this is equivalent to the naive implementation. As we only care about the order of
 /// activities we can ignore the scaling factor.
+#[derive(Clone)]
 pub struct Vsids {
     /// The activity of each variable.
     activity: Vec<OrderedFloat<f32>>,

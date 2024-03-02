@@ -22,7 +22,7 @@ mod luby;
 use luby::LubySequence;
 
 /// Scheduling of processing and solving steps.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Schedule {
     conflicts: u64,
     next_restart: u64,

@@ -68,6 +68,19 @@ pub struct Proof<'a> {
     clause_count: isize,
 }
 
+impl<'a> Clone for Proof<'a> {
+    fn clone(&self) -> Self {
+        Self {
+            format: self.format.clone(),
+            target: BufWriter::new(Box::new(sink())),
+            checker: self.checker.clone(),
+            map_step: self.map_step.clone(),
+            hash_bits: self.hash_bits.clone(),
+            clause_count: self.clause_count.clone(),
+        }
+    }
+}
+
 impl<'a> Default for Proof<'a> {
     fn default() -> Proof<'a> {
         Proof {

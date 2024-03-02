@@ -29,6 +29,18 @@ pub struct SolverState {
     pub solver_error: Option<SolverError>,
 }
 
+impl Clone for SolverState {
+    fn clone(&self) -> Self {
+        Self {
+            sat_state: self.sat_state.clone(),
+            formula_is_empty: self.formula_is_empty.clone(),
+            solver_invoked: self.solver_invoked.clone(),
+            state_is_invalid: self.state_is_invalid.clone(),
+            solver_error: None,
+        }
+    }
+}
+
 impl Default for SolverState {
     fn default() -> SolverState {
         SolverState {

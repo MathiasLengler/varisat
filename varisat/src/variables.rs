@@ -19,6 +19,7 @@ use data::{SamplingMode, VarData};
 use var_map::{VarBiMap, VarBiMapMut, VarMap};
 
 /// Variable mapping and metadata.
+#[derive(Clone)]
 pub struct Variables {
     /// Bidirectional mapping from user variables to global variables.
     ///

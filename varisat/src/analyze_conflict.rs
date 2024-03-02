@@ -15,7 +15,7 @@ use crate::{
 };
 
 /// Temporaries for conflict analysis
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct AnalyzeConflict {
     /// This is the learned clause after analysis finishes.
     clause: Vec<Lit>,

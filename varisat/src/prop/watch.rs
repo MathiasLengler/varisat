@@ -51,6 +51,7 @@ pub struct Watch {
 }
 
 /// Watchlists to detect clauses that became unit.
+#[derive(Clone)]
 pub struct Watchlists {
     /// Contains only valid data for indices of assigned variables.
     watches: Vec<Vec<Watch>>,

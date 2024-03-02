@@ -30,7 +30,7 @@ pub trait ProofTranscriptProcessor {
 }
 
 /// Create a transcript from proof steps
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub(crate) struct Transcript {
     lit_buf: Vec<Lit>,
 }

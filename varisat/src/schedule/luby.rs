@@ -3,6 +3,7 @@
 //! This sequence is [A182105](https://oeis.org/A182105).
 
 /// Infinite iterator yielding the Luby sequence.
+#[derive(Clone)]
 pub struct LubySequence {
     u: u64,
     v: u64,

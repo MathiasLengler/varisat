@@ -27,7 +27,7 @@ use parts::*;
 /// of the context use partial references provided by the `partial_ref` crate. This documents the
 /// data dependencies and makes the borrow checker happy without the overhead of passing individual
 /// references.
-#[derive(PartialRefTarget, Default)]
+#[derive(PartialRefTarget, Default, Clone)]
 pub struct Context<'a> {
     #[part(CheckerStateP)]
     pub checker_state: CheckerState,

@@ -44,7 +44,7 @@ impl Tier {
 /// Removal of clauses from the `clauses` and the `by_tier` fields can be delayed. The clause
 /// header's deleted and tier fields need to be checked when iterating over these. `by_tier` may
 /// also contain duplicate entries.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct ClauseDb {
     /// May contain deleted clauses, see above
     pub(super) clauses: Vec<ClauseRef>,

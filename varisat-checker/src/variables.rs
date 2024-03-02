@@ -39,7 +39,7 @@ impl Default for VarData {
     }
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Variables {
     /// Information about literals in the current formula.
     pub lit_data: Vec<LitData>,

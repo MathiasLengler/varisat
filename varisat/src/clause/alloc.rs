@@ -19,7 +19,7 @@ type ClauseOffset = u32;
 /// remaind valid when the buffer is grown. Clauses are aligned and the offset represents a multiple
 /// of the alignment size. This allows using 32-bit offsets while still supporting up to 16GB of
 /// clauses.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct ClauseAlloc {
     buffer: Vec<LitIdx>,
 }

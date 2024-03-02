@@ -11,7 +11,7 @@ use crate::{
 };
 
 /// Binary clauses.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct BinaryClauses {
     by_lit: Vec<Vec<Lit>>,
     count: usize,

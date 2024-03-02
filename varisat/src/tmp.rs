@@ -5,7 +5,7 @@ use varisat_formula::Lit;
 ///
 /// Make sure to check any documented invariants when using this. Also make sure to check all
 /// existing users when adding invariants.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct TmpData {
     pub lits: Vec<Lit>,
     pub lits_2: Vec<Lit>,
@@ -19,7 +19,7 @@ pub struct TmpData {
 ///
 /// Make sure to check any documented invariants when using this. Also make sure to check all
 /// existing users when adding invariants.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct TmpFlags {
     /// A boolean for each literal.
     ///

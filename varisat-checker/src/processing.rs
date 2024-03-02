@@ -153,6 +153,16 @@ pub struct Processing<'a> {
     transcript: transcript::Transcript,
 }
 
+impl<'a> Clone for Processing<'a> {
+    fn clone(&self) -> Self {
+        Self {
+            processors: vec![],
+            transcript_processors: vec![],
+            transcript: self.transcript.clone(),
+        }
+    }
+}
+
 impl<'a> Processing<'a> {
     /// Process a single step
     pub fn step<'b>(

@@ -12,7 +12,7 @@ use crate::{
 };
 
 /// Global model reconstruction
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Model {
     /// Assignment of the global model.
     ///

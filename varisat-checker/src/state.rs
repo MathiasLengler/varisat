@@ -28,7 +28,7 @@ use crate::{
 };
 
 /// A checker for unsatisfiability proofs in the native varisat format.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct CheckerState {
     /// Current step number.
     pub step: u64,

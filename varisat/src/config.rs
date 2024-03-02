@@ -2,7 +2,7 @@
 use varisat_internal_macros::{ConfigUpdate, DocDefault};
 
 /// Configurable parameters used during solving.
-#[derive(DocDefault, ConfigUpdate)]
+#[derive(DocDefault, ConfigUpdate, Clone)]
 pub struct SolverConfig {
     /// Multiplicative decay for the VSIDS decision heuristic.
     ///

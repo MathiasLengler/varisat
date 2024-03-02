@@ -74,7 +74,7 @@ pub struct ImplNode {
 /// This is a DAG having all assigned variables as nodes. It has unit clauses, assumptions and
 /// decisions as sources. For each propagated assignment it has incomming edges from the literals
 /// whose assignment caused the propagation to happen.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct ImplGraph {
     /// Contains only valid data for indices of assigned variables.
     pub nodes: Vec<ImplNode>,

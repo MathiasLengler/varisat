@@ -54,7 +54,7 @@ use parts::*;
 /// the context use partial references provided by the `partial_ref` crate. This documents the data
 /// dependencies and makes the borrow checker happy without the overhead of passing individual
 /// references.
-#[derive(PartialRefTarget, Default)]
+#[derive(PartialRefTarget, Default, Clone)]
 pub struct Context<'a> {
     #[part(AnalyzeConflictP)]
     pub analyze_conflict: AnalyzeConflict,

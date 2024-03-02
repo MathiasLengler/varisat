@@ -14,7 +14,7 @@ use crate::{
 };
 
 /// Incremental solving.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Assumptions {
     assumptions: Vec<Lit>,
     failed_core: Vec<Lit>,

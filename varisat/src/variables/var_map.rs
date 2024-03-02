@@ -5,7 +5,7 @@ use varisat_formula::{lit::LitIdx, Var};
 const NO_VAR_IDX: LitIdx = Var::max_count() as LitIdx;
 
 /// A mapping from variables to variables.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct VarMap {
     mapping: Vec<LitIdx>,
 }
@@ -53,7 +53,7 @@ impl VarMap {
 ///
 /// This is initialized with the identity mapping over all variables. It is possible to remove
 /// variables from this mapping on both sides.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct VarBiMap {
     fwd: VarMap,
     bwd: VarMap,

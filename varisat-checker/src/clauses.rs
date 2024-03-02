@@ -19,6 +19,7 @@ use crate::{
 const INLINE_LITS: usize = 3;
 
 /// Literals of a clause, either inline or an index into a buffer
+#[derive(Clone)]
 pub struct ClauseLits {
     length: LitIdx,
     inline: [LitIdx; INLINE_LITS],
@@ -79,6 +80,7 @@ impl ClauseLits {
 }
 
 /// Literals and metadata for non-unit clauses.
+#[derive(Clone)]
 pub struct Clause {
     /// LRAT clause id.
     pub id: u64,
@@ -122,7 +124,7 @@ pub enum DeleteClauseResult {
     Removed,
 }
 /// Checker clause storage.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Clauses {
     /// Next clause id to use.
     pub next_clause_id: u64,

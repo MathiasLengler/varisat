@@ -11,7 +11,7 @@ use crate::{
 use super::Reason;
 
 /// Current partial assignment.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Assignment {
     assignment: Vec<Option<bool>>,
     last_value: Vec<bool>,
@@ -79,7 +79,7 @@ impl Assignment {
 }
 
 /// Decision and propagation history.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Trail {
     /// Stack of all propagated and all enqueued assignments
     trail: Vec<Lit>,

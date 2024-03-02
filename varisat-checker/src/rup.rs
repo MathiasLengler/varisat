@@ -15,13 +15,14 @@ use crate::{
 };
 
 /// Propagation of the RUP check.
+#[derive(Clone)]
 struct TraceItem {
     id: u64,
     edges: Range<usize>,
     unused: bool,
 }
 
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct RupCheck {
     /// Stores overwritten values in `unit_clauses` to undo assignments.
     trail: Vec<(Lit, Option<UnitClause>)>,
