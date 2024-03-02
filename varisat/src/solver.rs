@@ -220,7 +220,7 @@ impl<'a> Solver<'a> {
     /// Generate a proof of unsatisfiability during solving.
     ///
     /// This needs to be called before any clauses are added.
-    pub fn write_proof(&mut self, target: impl io::Write + 'a, format: ProofFormat) {
+    pub fn write_proof(&mut self, target: impl io::Write + Sync + Send + 'a, format: ProofFormat) {
         assert!(
             self.ctx.solver_state.formula_is_empty,
             "called after clauses were added"

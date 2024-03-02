@@ -24,7 +24,7 @@ pub enum ProofTranscriptStep<'a> {
 }
 
 /// Implement to process transcript steps.
-pub trait ProofTranscriptProcessor {
+pub trait ProofTranscriptProcessor: Sync + Send {
     /// Process a single proof transcript step.
     fn process_step(&mut self, step: &ProofTranscriptStep) -> Result<(), Error>;
 }

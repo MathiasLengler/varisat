@@ -138,7 +138,7 @@ impl<'a, 'b> CheckerData<'a, 'b> {
 }
 
 /// Implement to process proof steps.
-pub trait ProofProcessor {
+pub trait ProofProcessor: Sync + Send {
     fn process_step(&mut self, step: &CheckedProofStep, data: CheckerData) -> Result<(), Error>;
 }
 
