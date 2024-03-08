@@ -10,7 +10,7 @@ pub mod long;
 pub mod watch;
 
 pub use assignment::{backtrack, enqueue_assignment, full_restart, restart, Assignment, Trail};
-pub use graph::{Conflict, ImplGraph, ImplNode, Reason};
+pub use graph::{Conflict, ImplGraph, Reason};
 pub use watch::{enable_watchlists, Watch, Watchlists};
 
 /// Propagate enqueued assignments.
