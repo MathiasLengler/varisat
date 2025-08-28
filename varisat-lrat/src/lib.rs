@@ -12,7 +12,7 @@ use varisat_formula::Lit;
 /// Proof processor that generates an LRAT proof.
 pub struct WriteLrat<'a> {
     binary: bool,
-    target: BufWriter<Box<dyn Write + 'a>>,
+    target: BufWriter<Box<dyn Write + Send + Sync + 'a>>,
     delete_open: bool,
     last_added_id: u64,
     buffered_deletes: Vec<u64>,
@@ -99,7 +99,7 @@ impl<'a> WriteLrat<'a> {
     /// is true, the compressed LRAT format is used which is a compact binary encoding. Despite the
     /// name, even a compressed LRAT proof can usually still be compressed a lot using a general
     /// data compression algorithm.
-    pub fn new(target: impl Write + 'a, binary: bool) -> WriteLrat<'a> {
+    pub fn new(target: impl Write + Send + Sync + 'a, binary: bool) -> WriteLrat<'a> {
         WriteLrat {
             binary,
             target: BufWriter::new(Box::new(target)),
