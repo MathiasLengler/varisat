@@ -21,6 +21,13 @@ mod luby;
 
 use luby::LubySequence;
 
+#[derive(Debug, Clone)]
+pub struct SolverStats {
+    pub conflicts: u64,
+    pub next_restart: u64,
+    pub restarts: u64,
+}
+
 /// Scheduling of processing and solving steps.
 #[derive(Default, Clone)]
 pub struct Schedule {
@@ -28,6 +35,16 @@ pub struct Schedule {
     next_restart: u64,
     restarts: u64,
     luby: LubySequence,
+}
+
+impl Schedule {
+    pub fn stats(&self) -> SolverStats {
+        SolverStats {
+            conflicts: self.conflicts,
+            next_restart: self.next_restart,
+            restarts: self.restarts,
+        }
+    }
 }
 
 /// Perform one step of the schedule.

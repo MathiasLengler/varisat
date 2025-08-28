@@ -16,7 +16,7 @@ use crate::{
     context::{config_changed, parts::*, Context},
     load::load_clause,
     proof,
-    schedule::schedule_step,
+    schedule::{schedule_step, SolverStats},
     state::SatState,
     variables,
 };
@@ -259,6 +259,10 @@ impl<'a> Solver<'a> {
             "called after clauses were added"
         );
         self.ctx.proof.add_processor(processor);
+    }
+
+    pub fn stats(&self) -> SolverStats {
+        self.ctx.schedule.stats()
     }
 }
 
